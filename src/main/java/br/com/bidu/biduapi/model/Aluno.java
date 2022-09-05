@@ -14,15 +14,10 @@ public class Aluno {
 
     private String nomealuno;
 
-    private Long cursoid;
 
-    public Long getCursoid() {
-        return cursoid;
-    }
-
-    public void setCursoid(Long cursoid) {
-        this.cursoid = cursoid;
-    }
+    @ManyToOne
+    @JoinColumn(name="cursoid")
+    private Curso curso;
 
     public Long getId() {
         return id;
@@ -40,6 +35,14 @@ public class Aluno {
         this.nomealuno = nomealuno;
     }
 
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -52,4 +55,5 @@ public class Aluno {
     public int hashCode() {
         return Objects.hash(id);
     }
+
 }

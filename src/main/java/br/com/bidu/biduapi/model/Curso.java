@@ -1,6 +1,8 @@
 package br.com.bidu.biduapi.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -12,6 +14,8 @@ public class Curso {
     private Long id;
 
     private String nomecurso;
+    @OneToMany(mappedBy ="curso" )
+    private List<Aluno> alunos=new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -27,6 +31,15 @@ public class Curso {
 
     public void setNomecurso(String nomecurso) {
         this.nomecurso = nomecurso;
+    }
+
+
+    public List<Aluno> getAlunos() {
+        return alunos;
+    }
+
+    public void setAlunos(List<Aluno> alunos) {
+        this.alunos = alunos;
     }
 
     @Override

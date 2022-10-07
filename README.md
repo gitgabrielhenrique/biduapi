@@ -1,2 +1,2 @@
 
-projeto inicial de uma api
+projeto inicial de estudo de api

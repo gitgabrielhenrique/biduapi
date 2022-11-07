@@ -1,5 +1,7 @@
 package br.com.bidu.biduapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +16,7 @@ public class Curso {
     private Long id;
 
     private String nomecurso;
+    @JsonIgnore
     @OneToMany(mappedBy ="curso" )
     private List<Aluno> alunos=new ArrayList<>();
 
